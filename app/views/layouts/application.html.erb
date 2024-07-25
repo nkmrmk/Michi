@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Michi</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1 href="https://fontmeme.com/ja/font-pixel-style/"><img src="https://fontmeme.com/permalink/240719/4f6c721c7cf8955c2aec6855b0a6f055.png" alt="font-pixel-style" border="0"></h1>
+      <div class="header-list">
+      
+    <ul>
+
+      
+        <li><%= link_to "新規投稿ページへ", new_tweet_path %></li>
+      
+      
+        <li><%= link_to "投稿一覧へ", index2_path %></li>
+      
+      
+        <li><%= link_to "Tweet一覧に戻る", tweets_path %></li>
+      
+      
+        <% if user_signed_in? %>
+      <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete%></li>
+        <% end %>
+    
+
+    </ul>
+    
+  </div>
+ 
+    </header>
+    <div class=main2>
+    <main>
+    <%= yield %>
+    </main>
+    </div>
+  </body>
+</html>

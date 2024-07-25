@@ -1,0 +1,96 @@
+// 親要素と小要素の関係をまず考える！、
+// 小要素のblank2は、中央揃えにして、大きさは全体の半分の長さかな〜みたいな感じ！
+@font-face {
+  font-family: 'misaki_mincho';
+  src: url(asset_path('misaki_mincho.ttf')) format("truetype");
+  font-display: swap;
+}
+
+body, .blank1, .blank2, h2, p, .field, .actions {
+  font-family: 'misaki_mincho', sans-serif
+}
+
+ .blank1{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.blank2{
+text-align: center;
+width: 50%;
+// text-align: center;
+color: rgb(250, 249, 253);
+background: #0a03c1;
+border-radius: 9px;
+margin: 20px 5px;
+padding: 20px 40px;
+border: 10px double rgb(247, 245, 245);
+
+
+}
+
+
+
+// // ここから下は、こだわりポイント！
+
+
+
+
+// // どこの aタグなのかわからんから、.class名スペースaとする
+.blank2 a{
+color:#eceef0;
+}
+
+
+.field label {
+font-weight: 100;
+font-size: 15px;
+}
+
+
+
+
+// // 場合に応じて入力する場所の大きさ変えたいよね！その場合は、.class名スペースinputで差別化する！
+// // passwardの枠だけでかくしたかったらどうしたらいいかな？？
+
+
+.field input[type="email"] {
+border-style: none;
+width: 200px;
+height: 30px;
+background: #e5ece9;
+border-radius: 10px;
+border: 1px #060339 solid;
+}
+
+.field input[type="password"] {
+border-style: none;
+width: 200px;
+height: 30px;
+background: #33b887;
+border-radius: 10px;
+border: 1px #f9f9fc solid;
+}
+
+
+
+
+.actions input[type="submit"] {
+border-style: none;
+width: 150px;
+height: 30px;
+background: #f8f7f7;
+border-radius: 10px;
+border: 1px #fefdff solid;
+}
+
+.actions input[type="submit"]:hover {
+cursor: pointer;
+background: linear-gradient(to bottom,#8cc9f7,#f6f8f9f3);
+}
+
+
+
+
+  

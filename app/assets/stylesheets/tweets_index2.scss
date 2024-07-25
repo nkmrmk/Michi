@@ -1,0 +1,111 @@
+h3 { 
+  color: orange;
+  font-size: 35px;
+
+}
+
+.center{
+  padding: 0.5em 1em;
+    color: #f7f7f9;
+    background: #002869;/*背景色*/
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 15px;
+    padding-top: 30px;
+    
+}
+.center p {
+    margin: 0; 
+    padding: 0;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.shousai { 
+  
+    text-align: center;
+    width: 55.7%;
+    // text-align: center;
+    color: rgb(250, 249, 253);
+    background: #020202;
+    border-radius: 8px;
+    margin: 20px 5px;
+    margin-left: 100px;
+    padding: 20px 20px;
+    border: 10px double rgb(247, 245, 245);
+      }
+      .shousai p {
+        margin: 0; 
+        padding: 0;
+    }
+
+.flex {
+        display: flex; /*横並び*/
+      }
+      .flex .image {
+        width: 280px; /*画像サイズ指定*/
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        margin-left: 100px;
+      }
+
+      .bottom_space {
+        margin-bottom: 2em;
+      }
+
+ol {padding: 8px 19px;
+  padding-bottom: 10px;
+  color: #fafafc;
+  border-bottom: solid 10px #0a0b0b;
+  border-right: solid 10px #090909;
+}
+form.button_to{display:inline;
+}
+
+.tweets-container{
+  margin:0 auto;
+}
+
+.sarch{margin-bottom: 3em;}
+
+.right{
+       padding-left: 1000px;
+       padding-top: 0.5px;
+       padding-bottom: 0px;
+}
+
+.btn-gradient-3d {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  color: rgba(0, 69, 212, 0.47);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+  
+}
+
+.btn-gradient-3d:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.center2 {
+ margin: auto;
+}
+
+
+.shiru{
+  margin-left: 100px;
+}
+
+.shiru p{
+  font-size: 23px;
+}

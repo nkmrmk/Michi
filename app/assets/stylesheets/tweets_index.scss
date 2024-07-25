@@ -1,0 +1,169 @@
+.tweets{
+    display: flex;
+    justify-content: center;
+}
+
+.tweet{ 
+    padding: 0.5em 1em;
+    margin: 2em 1em;
+    border: double 5px #1c38ee;
+    background: #f0f7ff;
+    
+}
+.tweet p {
+    margin: 0; 
+    padding: 0;
+}
+
+.maru1{
+    background-color: #eee71c;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 245px;
+    left: 335px;
+    text-align:center;
+    line-height: 40px;
+  }
+
+  .maru2{
+    background-color: #cecdbb;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 245px;
+    left: 588px;
+    text-align:center;
+    line-height: 40px;
+  }
+
+  .maru3{
+    background-color: #bc9c49;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 245px;
+    left: 850px;
+    text-align:center;
+    line-height: 40px;
+  }
+  
+
+.lank {
+    font-size: 30px;
+    position: relative;
+    margin-top: 80px;
+    text-align: center;
+    }
+   
+    .lank:before,
+    .lank:after {
+     position: absolute;
+     z-index: 0;
+     bottom: -10px;
+     display: block;
+     content: '';
+     border: 1em solid #d90606;
+   }
+   
+   .lank:before {
+     left: -30px;
+     border-left-width: 15px;
+     border-left-color: transparent;
+     margin-left: 500px;
+   }
+   
+   .lank:after {
+     right: -30px;
+     border-right-width: 15px;
+     border-right-color: transparent;
+     margin-right: 500px;
+   }
+   
+   .lank span {
+     position: relative;
+     z-index: 1;
+     display: block;
+     padding: 15px;
+     color: #fff;
+     background: #fa4141;
+     margin-left: 500px;
+     margin-right: 500px;
+   }
+   
+   .lank span:before,
+   .lank span:after {
+     position: absolute;
+     bottom: -10px;
+     display: block;
+     width: 10px;
+     height: 10px;
+     content: '';
+     border-style: solid;
+     border-color: #b70505 transparent transparent transparent;
+     
+   }
+
+   
+body {
+    background-image: url(images/back1.jpeg);
+    background-size: cover;
+   }
+
+   .form-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-container2 form {
+    margin-bottom: 20px; /* Adds some space between the forms */
+  }
+  
+  .form-container2 ul {
+    list-style-type: none; /* Removes bullet points from the list */
+    padding: 0;
+    margin: 0;
+  }
+
+  .form-container3 {
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 4px rgb(71, 33, 4);
+    border-bottom: solid 4px #532906; 
+    display: inline-block
+  }
+
+  .form-container3:before, .form-container3:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 4px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: #532906;
+}
+.form-container3:before {left: 10px;}
+.form-container3:after {right: 10px;}
+.form-container3 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.form-container4{
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-image: url("back1.jpg"); /* Replace with your image path */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Fixed background for a parallax effect */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  position: relative;
+}

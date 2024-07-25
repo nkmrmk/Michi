@@ -1,0 +1,53 @@
+<h3>Tweet詳細</h3>
+<div class="center">
+    <div class="center2">
+    <div class="flex">
+    <div class="kakomi">
+    <figure class="image">
+  <% if @tweet.photo.attached? %>
+    <%= image_tag @tweet.photo, size: '250x200'%>
+  <% end %>
+  </figure>
+    </div>
+
+
+
+<ol>
+  <p>なまえ : <%= @tweet.title %>
+  <p>タグ  : <% @tweet.tags.each do |tag| %><%= tag.name %></p>
+<% end %></p>
+  <p>ばしょ : <%= @tweet.spot %></p> 
+  <p>りんく : <%= Rinku.auto_link(@tweet.chain, :all, 'target="_blank"').html_safe %></p>
+  <p><%= @tweet.created_at %></p>
+  </ol>
+  </div>
+
+  <div class="shousai">
+    <p><%= @tweet.body %></p>
+  <% if user_signed_in? %>
+      <% if current_user.already_liked?(@tweet) %>
+        <%= button_to tweet_like_path(@tweet), method: :delete do %>
+          <p>知らなかった！を取り消す</p><%= @tweet.likes.count %>
+        <% end %>
+      <% else %>
+        <%= button_to tweet_likes_path(@tweet), method: :post do %>
+          <p>知らなかった！</p><%= @tweet.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>知らなかった！の数 = </p><%= @tweet.likes.count %>
+    <% end %>
+</div>
+
+<div class="shiru">
+<p>知らなかった！したユーザー</p>
+<% @tweet.liked_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+</div>
+
+<div class="right">
+<%= link_to "編集する", edit_tweet_path(@tweet.id),class:"btn-gradient-3d" %> 
+</div>
+
+

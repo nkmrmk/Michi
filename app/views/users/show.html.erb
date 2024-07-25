@@ -1,0 +1,52 @@
+<body>
+<>
+<h1>マイページ</h1>
+<div class="oowaku">
+<div class="gazou">
+<% if @user.photo.attached? %>
+        <%= image_tag @user.photo, size: '250x200'%>
+<% end %>
+</div>
+<div class="profile">
+<p>なまえ : <%= @user.name %></p>
+<p>メール : <%= @user.email %></p>
+<p>プロフィール : <%= @user.profile %></p>
+</div>
+</div>
+
+
+<div class="grandma">
+
+<div class="ichiran-oya">
+<div class="ichiran">
+<span class="box-title">ユーザーの投稿一覧</span>
+<% @user.tweets.each do |t| %>
+  <p><%= t.title %></p>
+  <p><%= t.body %></p>
+  <%= link_to "編集する", edit_tweet_path(t.id) %>
+  <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+<% end %>
+</div>
+</div>
+</div>
+
+<!-- 以下はいいね機能を実装している場合-->
+<div class="henshu">
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+</div>
+
+<div class="nice-ichiran-oya">
+<div class="nice-ichiran">
+<span class="box-title">ユーザーがいいねした投稿一覧</span>
+<% @user.liked_tweets.each do |t| %>
+  <p><%= t.user.name %></p>
+  <p><%= t.title %></p>
+<% end %>
+</div>
+<!-- ここまで-->
+</div>
+</div>
+</div>
+</body>

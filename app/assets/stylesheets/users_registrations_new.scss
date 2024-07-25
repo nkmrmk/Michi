@@ -1,0 +1,74 @@
+.blank1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+.blank2{
+    text-align: center;
+    width: 50%;
+   // text-align: center;
+    color: rgb(250, 249, 253);
+    background: #020202;
+    border-radius: 9px;
+    margin: 20px 5px;
+    padding: 20px 40px;
+    border: 10px double rgb(248, 243, 243);
+    }
+
+    .field label {
+    font-weight: 100;
+    font-size: 15px;
+    }
+    .field input[type="name"] {
+    border-style: none;
+    width: 200px;
+    height: 30px;
+    background: #c2d2f1;
+    border-radius: 10px;
+    border: 1px #f9f9fc solid;
+    }
+    
+    .field input[type="email"] {
+    border-style: none;
+    width: 200px;
+    height: 30px;
+    background: #c2d2f1;
+    border-radius: 10px;
+    border: 1px #f9f9fc solid;
+    }
+
+    .field input[type="password"] {
+    border-style: none;
+    width: 200px;
+    height: 30px;
+    background: #c2d2f1;
+    border-radius: 10px;
+    border: 1px #e7e6f1 solid;
+    }
+        
+    .field input[type="password_confirmation"] {
+    border-style: none;
+    width: 200px;
+    height: 30px;
+    background: #c2d2f1;
+    border-radius: 10px;
+    border: 1px #f9f9fc solid;
+    
+    }
+
+    .actions input[type="submit"] {
+        border-style: none;
+        width: 150px;
+        height: 30px;
+        background: #f8f7f7;
+        border-radius: 10px;
+        border: 1px #fefdff solid;
+        margin:30px
+        }
+        
+        
+        .actions input[type="submit"]:hover {
+        cursor: pointer;
+        background: linear-gradient(to bottom,#8cc9f7,#f8f9fbf3);
+        }

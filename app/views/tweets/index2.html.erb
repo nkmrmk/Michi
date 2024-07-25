@@ -1,0 +1,76 @@
+<div class="form-container4">
+<div class="form-container3">
+<%= stylesheet_link_tag 'tweets_index2', :media => "all" %>
+<h3>Tweet検索</h3>
+
+<%= form_tag({controller: "tweets", action: "index2"}, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索する' %>
+<% end %>
+ <%= form_tag({controller:"tweets",action:"index2"}, method: :get) do %>
+    <% Tag.all.each do |t| %>
+        <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+    <% end %>
+    <%= submit_tag '検索' %>
+</div>
+</div>
+<%= page_entries_info @tweets %>
+
+
+<%= paginate @tweets %>
+  <% @tweets.each do |t| %>
+    <div class="center">
+    <div class="center2">
+    <div class="flex">
+    <div class="kakomi">
+    <figure class="image"> <% if t.photo.attached? %>
+        <%= image_tag t.photo, size: '270x200'%>
+    <% end %>
+    </figure>
+    </div>
+
+      <ol>
+      <p >なまえ : <%= t.title %></p>
+      <p >ばしょ:  <%= t.spot %></p>
+      <p >りんく : <%= Rinku.auto_link(t.chain, :all, 'target="_blank"').html_safe  %></p>
+      <p class="bottom_space">投稿者 : <%= t.user.email %></p>
+      <p><%= t.created_at %></p>
+      </ol>
+    </div>
+    </div>
+    
+    <div class="shousai">
+      <%= t.body %>
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+          <%= button_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
+            <p>知らなかった！を取り消す</p>
+            <%= t.likes.count %>
+          <% end %>
+        <% else %>
+          <%= button_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :tweet do %>
+            <p>知らなかった！</p>
+            <%= t.likes.count %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= t.likes.count %>
+  <% end %>
+      </div>
+      
+    
+    <div class="right">
+      <%= link_to "詳細へ", tweet_path(t.id),class:"btn-gradient-3d"%>
+      <% if user_signed_in? && current_user.id == t.user_id %>
+      <%= link_to "編集する", edit_tweet_path(t.id),class:"btn-gradient-3d" %>
+      <%= link_to "削除する", tweet_path(t.id), method: :delete ,class:"btn-gradient-3d"%>
+      <% end %>
+    </div>
+    </div>
+
+     
+<% end %>
+      
+    </div>
+  <% end %>
+</div>

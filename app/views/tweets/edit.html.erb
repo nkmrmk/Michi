@@ -1,0 +1,13 @@
+<%= form_for @tweet do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :size => 140 %> 
+  <%= f.label :spot %>
+  <%= f.text_field :spot, :size => 140 %>
+  <%= f.label :body %>
+  <%= f.text_area :body, :size => "30x2" %>
+  <%= f.label :chain %>
+  <%= f.text_field :chain, :size => 140 %>
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
+  <%= f.submit "編集する" %>
+<% end %>
